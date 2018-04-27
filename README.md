@@ -1,4 +1,4 @@
-# Workout diary / Workout tracker / WOLog (Work Out Log)
+# Training Tracker / Workout diary / WOLog (Work Out Log) / pyPT (Python Personal Trainer)
 
 ## Problem definition
 I want to track my workout progress.
