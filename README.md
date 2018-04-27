@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/wowsuchnamaste/training-tracker.svg?branch=development)](https://travis-ci.org/wowsuchnamaste/training-tracker)
+
 # Training Tracker / Workout diary / WOLog (Work Out Log) / pyPT (Python Personal Trainer)
 
 ## Problem definition
@@ -56,5 +57,3 @@ Source code will be kept in a git resository, with backups to github or gitlab.
   1. Adjust weight after progress addition to match available weights
      - Barbell style: Increment by 2.5 kg
      - Dumbbell style: Increment by 1 kg for 1-10 kg range, 2 kg for > 10.
-  1. 
-
