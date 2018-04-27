@@ -1,4 +1,5 @@
-# Workout diary / Workout tracker / WOLog (Work Out Log)
+[![Build Status](https://travis-ci.org/wowsuchnamaste/training-tracker.svg?branch=development)](https://travis-ci.org/wowsuchnamaste/training-tracker)
+# Training Tracker / Workout diary / WOLog (Work Out Log) / pyPT (Python Personal Trainer)
 
 ## Problem definition
 I want to track my workout progress.
