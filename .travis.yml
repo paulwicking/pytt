@@ -11,6 +11,9 @@ branches:
   only:
   - development
 
-install: true  # skip installation step
+install:
+ - pip install codecov
 
-script: pytest
+script:
+ - pytest
+ - codecov
