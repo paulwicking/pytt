@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/wowsuchnamaste/training-tracker.svg?branch=development)](https://travis-ci.org/wowsuchnamaste/training-tracker)
+[![codecov](https://codecov.io/gh/wowsuchnamaste/training-tracker/branch/development/graph/badge.svg)](https://codecov.io/gh/wowsuchnamaste/training-tracker)
 
 # Training Tracker / Workout diary / WOLog (Work Out Log) / pyPT (Python Personal Trainer)
 
