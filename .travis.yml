@@ -12,8 +12,7 @@ branches:
   - development
 
 install:
- - pip install codecov
+ - pip install pytest pytest-cov
 
 script:
- - pytest
- - codecov
+ - pytest --cov=./
