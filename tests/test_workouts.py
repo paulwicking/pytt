@@ -1,6 +1,6 @@
 import json
 from unittest import TestCase
-from unittest.mock import patch, mock_open
+from unittest.mock import patch, mock_open, MagicMock
 from training_tracker.workouts import Exercise, Workout
 
 
@@ -59,3 +59,15 @@ class TestWorkouts(TestCase):
             test_workout.load_workout()
 
             mock_file.assert_called_once_with('workouts.json', 'r')
+
+    def test_save_and_load_workouts_raises_IOError_exceptions(self):
+        m = mock_open()
+        m.side_effect = IOError
+
+        with patch('builtins.open', m, create=True):
+                test_workout = Workout()
+                with self.assertRaises(IOError):
+                    test_workout.load_workout()
+
+                with self.assertRaises(IOError):
+                    test_workout.save_workout()

@@ -38,13 +38,13 @@ class Workout:
             with open('workouts.json', 'w') as out_file:
                 out_data = json.dumps(self._exercises)
                 out_file.write(out_data)
-        except IOError:
-            raise IOError
+        except IOError as err:
+            raise IOError(err)
 
     def load_workout(self):
         """Loads a json-file containing workout information."""
         try:
             with open('workouts.json', 'r') as in_file:
                 self._exercises = json.load(in_file)
-        except IOError:
-            raise IOError
+        except IOError as err:
+            raise IOError(err)
