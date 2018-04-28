@@ -51,7 +51,8 @@ def sanitize_factor(factor):
         else:
             return float(factor)
 
-    if type(factor) != float or type(factor) != int:
+    else:
+        #  Return 1.9 for all non-int or non-float values
         return 1.9
 
 

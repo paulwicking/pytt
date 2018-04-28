@@ -120,11 +120,23 @@ class TestWorkoutDiaryTools(TestCase):
 
     def test_sanitize_factor(self):
         illegal_value = 'This value is illegal'
-        expected = 1.9
+        too_low_value = 1.0
+        negative_value = -1.9
+        too_high_value = 3.0
 
-        result = tools.sanitize_factor(illegal_value)
+        expected_low = 1.6
+        expected_high = 2.2
+        expected_illegal = 1.9
 
-        self.assertEqual(expected, result)
+        illegal_result = tools.sanitize_factor(illegal_value)
+        too_low_result = tools.sanitize_factor(too_low_value)
+        negative_value_result = tools.sanitize_factor(negative_value)
+        too_high_result = tools.sanitize_factor(too_high_value)
+
+        self.assertEqual(expected_illegal, illegal_result)
+        self.assertEqual(expected_low, too_low_result)
+        self.assertEqual(expected_low, negative_value_result)
+        self.assertEqual(expected_high, too_high_result)
 
     def test_protein_per_meal(self):
         expected = 40
