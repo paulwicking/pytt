@@ -6,7 +6,7 @@ help:
 
 init:
 	@echo 'Install project dependencies'
-	pip install pipenv
+	pip install pipenv codecov
 	pipenv install
 
 test:
