@@ -1,23 +1,19 @@
 os: linux
 sudo: false
-
 language: python
 python:
-  - "3.4"
-  - "3.5"
-  - "3.6"
-
+- '3.4'
+- '3.5'
+- '3.6'
 branches:
   only:
   - development
-
 install:
-  # - pip install codecov pytest pytest-cov
-  - make init
-
+- make init
 script:
-  # - pytest --cov=training_tracker
-  - make test
-
+- make test
 after_success:
-  - codecov
+- codecov
+env:
+  matrix:
+    secure: kucotWTdF+o/L97yuLASr/bTK5zZRhm+w0K7HnkqroP26cR1eRO82jKCZBfhfvipMqT4/OvFJiVB7FQCH6Aj097h3DjP44CKSqonccTMbU4d+/ZmxSw6rY5ofj2FYkBm43lZhQjR45FQq1HXbirXSjy7n0KbNhI0ZFK8qHdeUEVniSjxZcmxOCLbHCvuTCuhKP295rbBcMJ6knyHbhwnYlLG3U3kQMXh8zgR4131y5ucNBQM7on8g4bGTYAafGFykA8+eY96AQN2JIQy9U9/xNWWU4XIHlypfryjgfQmcoXbkvnuTgn7nIiEvSToD2k7Ce3Qc+4F4QNMR3WdOQOCY4k/dnJZ5Tn5qDpOkOkueD3/tm+yIM0mjkZZkSYI8hac2B9jsFHLkJ1D2iUN9cwGQ/wOKyH5SpLLOLncshoBlg2huOFvf1yHKlJJeZPyUVl5gpQ7qiCYrQuKCo52H/O/RoTmbuWX4X+ABwM+n1JLsGCeXTEV2QQV/DK9v/DkmrW4yYglUv9kXRstTKfCnEkhHZBpWIPLJghwipWKJzXuWhEL+wHASPHhD4rCyrPuFGftR+IKXvgO21GRmqx4Si+zaXx8gEQzOocuGMEDwP5UcwNP0KBdrZr688Kdoqrol9u9TC8UKdERCkGDYho9NppL46opxOUSSnn7fhXRo44T2/8=
