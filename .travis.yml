@@ -17,7 +17,7 @@ install:
 
 script:
   # - pytest --cov=training_tracker
-  make test
+  - make test
 
 after_success:
   - codecov
