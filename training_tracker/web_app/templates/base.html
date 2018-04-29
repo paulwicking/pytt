@@ -3,8 +3,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  {% if title %}
   <title>{{ title }} - Training Tracker</title>
+  {% else %}
+  <title>Training Tracker</title>
+  {% endif %}
   <meta name="description" content="Training Tracker">
   <meta name="author" content="Paul Wicking">
 
