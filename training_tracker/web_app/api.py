@@ -1,12 +1,8 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from training_tracker import MODULE_VERSION, MODULE_NAME
 
+
 app = Flask(__name__)
-
-
-@app.route('/')
-def home():
-    return jsonify({'message': 'Hello world'})
 
 
 @app.route('/api/')

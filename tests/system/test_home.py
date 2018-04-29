@@ -1,16 +1,15 @@
-from unittest import TestCase
-from training_tracker.web_app import app
-import json
-
-
-class TestHome(TestCase):
-    def test_home(self):
-        with app.test_client() as client:
-            response = client.get('/')
-
-            self.assertEqual(response.status_code, 200)
-            self.assertEqual(
-                #  Remember to decode to UTF-8 for Python 3.4 and 3.5
-                json.loads(response.get_data().decode('utf-8')),
-                {'message': 'Hello world'}
-            )
+# from unittest import TestCase
+# from training_tracker.web_app.api import app
+# import json
+#
+#
+# class TestHome(TestCase):
+#     def test_home(self):
+#         with app.test_client() as client:
+#             expected_status = 200
+#             expected_data = {'message': 'Hello world'}
+#             response = client.get('/')
+#
+#             self.assertEqual(expected_status, response.status_code)
+#             #  Remember to decode json loaded response to UTF-8 for Python 3.4 and 3.5
+#             self.assertEqual(expected_data, json.loads(response.get_data().decode('utf-8')))
