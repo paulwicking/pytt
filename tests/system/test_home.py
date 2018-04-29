@@ -10,6 +10,6 @@ class TestHome(TestCase):
 
             self.assertEqual(response.status_code, 200)
             self.assertEqual(
-                json.loads(response.get_data()),
+                json.loads(response.get_data().decode('utf-8')),
                 {'message': 'Hello world'}
             )
