@@ -12,10 +12,12 @@ branches:
   - development
 
 install:
- - pip install codecov pytest pytest-cov
+  # - pip install codecov pytest pytest-cov
+  - make init
 
 script:
- - pytest --cov=training_tracker
+  # - pytest --cov=training_tracker
+  make test
 
 after_success:
   - codecov
