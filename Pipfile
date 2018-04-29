@@ -8,6 +8,8 @@ name = "pypi"
 [packages]
 
 flask = "*"
+pytest = "*"
+pytest-cov = "*"
 
 
 [dev-packages]
