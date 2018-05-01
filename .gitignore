@@ -2,3 +2,8 @@
 __pycache__
 .venv/
 .pytest_cache/
+build/
+Training_Tracker.egg-info/
+.coverage
+dist/
+instance/
