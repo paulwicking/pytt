@@ -149,3 +149,22 @@ class TestWorkoutDiaryTools(TestCase):
         result = tools.protein_per_day(100)
 
         self.assertEqual(expected, result)
+
+    def test_can_match_weight_to_plate_size(self):
+        expected = 67.5
+        test_weight = 68.5
+        test_plate = 1.25
+
+        result = tools.match_weight_to_plate_size(test_weight, test_plate)
+
+        self.assertEqual(result, expected)
+
+    def test_plate_matching_rounds_up_when_weight_diff_is_one_plate_or_less(self):
+        test_base_weight = 67.5
+        test_plate = 1.25
+        test_weight = test_base_weight + test_plate
+
+        expected = test_base_weight + (2 * test_plate)
+        result = tools.match_weight_to_plate_size(test_weight, test_plate)
+
+        self.assertEqual(result, expected)

@@ -4,6 +4,11 @@
 def generate_set_list(target_max, sets=5, reps=5, orm=100):
     """Generate workout sets.
 
+    :param: `target_max` Target max weight in kilo.
+    :param: `sets` (`int`): Number of sets.
+    :param: `reps` (int): Number of repetitions per set.
+    :param: `orm`: One Repetition Max weight in percent.
+
     Returns a list of tuples containing workout sets
     """
     workout_sets = iter([sets for sets in list(range(60, 101, 10))])
@@ -11,7 +16,7 @@ def generate_set_list(target_max, sets=5, reps=5, orm=100):
 
     for set_number in range(sets):
         this_set_number = set_number + 1  # We're counting from 0, add 1 so that it looks nice
-        this_weight = float(target_max * (next(workout_sets) / orm))
+        this_weight = calculate_set_weight(orm, target_max, workout_sets, plate_size=1.25)
         this_set_total = float(this_weight * reps)
         this_set = {
             'Set': this_set_number,
@@ -23,6 +28,40 @@ def generate_set_list(target_max, sets=5, reps=5, orm=100):
         result.append(this_set)
 
     return result
+
+
+def calculate_set_weight(orm, target_max, workout_sets, plate_size):
+    """Return weight for one specific set, normalize to plate size.
+
+    :param orm:
+    :param target_max:
+    :param workout_sets:
+    :param: plate_size: The weight of a plate in kilo.
+    :return:
+    """
+
+    this_weight = float(target_max * (next(workout_sets) / orm))
+    if this_weight % plate_size != 0:
+        this_weight = match_weight_to_plate_size(this_weight, plate_size)
+
+    return this_weight
+
+
+def match_weight_to_plate_size(weight, single_plate_size):
+    """Return a weight that can be loaded with the available plates.
+
+    :param weight:
+    :param single_plate_size:
+    :return:
+    """
+    pair_of_plates = single_plate_size * 2
+    low_weight = weight - (weight % pair_of_plates)
+    high_weight = low_weight + pair_of_plates
+
+    if (weight % pair_of_plates) < single_plate_size:
+        return low_weight
+    else:
+        return high_weight
 
 
 def generate_warm_up_set_list(target_max):
