@@ -9,7 +9,7 @@ def generate_set_list(target_max, sets=5, reps=5, orm=100):
     :param: `reps` (int): Number of repetitions per set.
     :param: `orm`: One Repetition Max weight in percent.
 
-    Returns a list of tuples containing workout sets
+    Returns a list of dictionaries containing workout sets
     """
     workout_sets = iter([sets for sets in list(range(60, 101, 10))])
     result = []
@@ -33,15 +33,15 @@ def generate_set_list(target_max, sets=5, reps=5, orm=100):
 def calculate_set_weight(orm, target_max, workout_sets, plate_size):
     """Return weight for one specific set, normalize to plate size.
 
-    :param orm:
+    :param orm: One repetition maximum
     :param target_max:
     :param workout_sets:
-    :param: plate_size: The weight of a plate in kilo.
+    :param plate_size: The weight of a plate in kilo.
     :return:
     """
 
     this_weight = float(target_max * (next(workout_sets) / orm))
-    if this_weight % plate_size != 0:
+    if (this_weight % plate_size) > 0:
         this_weight = match_weight_to_plate_size(this_weight, plate_size)
 
     return this_weight
@@ -64,14 +64,16 @@ def match_weight_to_plate_size(weight, single_plate_size):
         return high_weight
 
 
-def generate_warm_up_set_list(target_max):
+def generate_warm_up_set_list(target_max, single_plate_weight=1.25):
     """Generate at list of warm-up sets for the given target max.
 
     Returns a list of two tuples that contain warm-up out sets at 40 % and 50 %
     of target max weight.
     """
-    return [('Warm-up set 1', target_max * .4),
-            ('Warm-up set 2', target_max * .5),
+    first_warmup_set = match_weight_to_plate_size((target_max * .4), single_plate_weight)
+    second_warmup_set = match_weight_to_plate_size((target_max * .5), single_plate_weight)
+    return [('Warm-up set 1', first_warmup_set),
+            ('Warm-up set 2', second_warmup_set),
             ]
 
 
