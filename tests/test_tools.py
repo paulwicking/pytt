@@ -150,6 +150,24 @@ class TestWorkoutDiaryTools(TestCase):
 
         self.assertEqual(expected, result)
 
+    def test_calulate_set_weight_normalizes_return_value_to_plate_size(self):
+        orm = 100
+        target_max = 67.5
+        test_set = iter(list(range(100, 101, 10)))
+        plate_size = 1.25
+
+        deviating_test_set = iter(list(range(100, 101, 10)))
+        target_max_deviating_from_plate_size = 68.5
+
+        expected = 67.5
+        result = tools.calculate_set_weight(orm, target_max, test_set, plate_size)
+        result_from_deviating_weight = tools.calculate_set_weight(
+            orm, target_max_deviating_from_plate_size, deviating_test_set, plate_size)
+
+        self.assertEqual(result, expected)
+
+        self.assertEqual(result_from_deviating_weight, expected)
+
     def test_can_match_weight_to_plate_size(self):
         expected = 67.5
         test_weight = 68.5

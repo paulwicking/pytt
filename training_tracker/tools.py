@@ -31,7 +31,7 @@ def generate_set_list(target_max, sets=5, reps=5, orm=100):
 
 
 def calculate_set_weight(orm, target_max, workout_sets, plate_size):
-    """Return weight for one specific set, normalize to plate size.
+    """Return weight for one specific set, normalized to plate size.
 
     :param orm: One repetition maximum
     :param target_max:
