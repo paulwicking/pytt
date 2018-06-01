@@ -7,3 +7,4 @@ Training_Tracker.egg-info/
 .coverage
 dist/
 instance/
+training_tracker.egg-info/
