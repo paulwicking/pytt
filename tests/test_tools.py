@@ -186,3 +186,43 @@ class TestWorkoutDiaryTools(TestCase):
         result = tools.match_weight_to_plate_size(test_weight, test_plate)
 
         self.assertEqual(result, expected)
+
+    def test_calculate_lift_to_bodyweight_ratio(self):
+        test_lift_weight = 80
+        test_bodyweight = 100
+
+        expected = 0.8
+        actual = tools.lift_to_bodyweight_ratio(test_lift_weight, test_bodyweight)
+
+        self.assertEqual(expected, actual)
+
+    def test_lift_to_bodyweight_ratio_handles_returns_None_on_zero_values(self):
+        test_lift_weight = 0
+        test_body_weight = 100
+
+        expected = None
+        actual = tools.lift_to_bodyweight_ratio(test_lift_weight, test_body_weight)
+        self.assertEqual(expected, actual)
+
+        # Swap the values
+        test_lift_weight = 100
+        test_body_weight = 0
+
+        actual = tools.lift_to_bodyweight_ratio(test_lift_weight, test_body_weight)
+        self.assertEqual(expected, actual)
+
+        # Both values are zero
+        test_lift_weight = 0
+        test_body_weight = 0
+
+        actual = tools.lift_to_bodyweight_ratio(test_lift_weight, test_body_weight)
+        self.assertEqual(expected, actual)
+
+    def test_lift_to_bodyweight_ratio_returns_None_on_negative_values(self):
+        test_lift_weight = 10
+        test_body_weight = -50
+
+        expected = None
+        actual = tools.lift_to_bodyweight_ratio(test_lift_weight, test_body_weight)
+
+        self.assertEqual(expected, actual)

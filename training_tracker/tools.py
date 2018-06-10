@@ -123,3 +123,19 @@ def total_weight_from_sets(set_list):
         total_weight += set_['Total']
 
     return total_weight
+
+
+def lift_to_bodyweight_ratio(lift=None, bodyweight=None):
+    """Return the lift weight to body weight ratio.
+
+    :param lift: ``int`` or ``float``. The lifted weight.
+    :param bodyweight: ``int`` or ``float``, body weight.
+    :return: Ratio as ``int`` or ``float``.
+    """
+    if not lift or not bodyweight:
+        return None
+
+    elif (lift < 0) or (bodyweight < 0):
+        return None
+
+    return lift / bodyweight

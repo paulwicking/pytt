@@ -8,6 +8,5 @@ setup(
     license='MIT',
     author='Paul Wicking',
     author_email='paulwicking@gmail.com',
-    description='Track your powerlifting training progress.'
+    description='Track your power lifting training progress.'
 )
-
