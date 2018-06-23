@@ -74,4 +74,8 @@ class TestWorkouts(TestCase):
 
     def test_can_log_a_workout(self):
         test_workout = Workout()
-        Workout.log(a_date, a_list_of_exercises_with_notes_sets_reps_weights, workout_notes)
+        test_date = '28-01-2018'
+        test_exercise_list = [Exercise(), Exercise()]
+        test_notes = "some random note"
+
+        test_workout.log_workout(test_date, test_exercise_list, test_notes)

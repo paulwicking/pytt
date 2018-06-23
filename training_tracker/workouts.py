@@ -48,3 +48,6 @@ class Workout:
                 self._exercises = json.load(in_file)
         except IOError as err:
             raise IOError(err)
+
+    def log_workout(self, a_date, a_list_of_exercises_with_notes_sets_reps_weights, workout_notes):
+        pass
