@@ -71,3 +71,7 @@ class TestWorkouts(TestCase):
         result = test_workout.exercise_list()
 
         self.assertEqual(expected, result)
+
+    def test_can_log_a_workout(self):
+        test_workout = Workout()
+        Workout.log(a_date, a_list_of_exercises_with_notes_sets_reps_weights, workout_notes)
