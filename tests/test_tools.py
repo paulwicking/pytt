@@ -187,6 +187,18 @@ class TestWorkoutDiaryTools(TestCase):
 
         self.assertEqual(result, expected)
 
+    def test_generated_sets_have_weights_matched_to_plates(self):
+        expected = [
+            {'Set': 1, 'Weight': 37.5, 'Reps': 5, 'Total': 187.5},
+            {'Set': 2, 'Weight': 45.0, 'Reps': 5, 'Total': 225.0},
+            {'Set': 3, 'Weight': 50.0, 'Reps': 5, 'Total': 250.0},
+            {'Set': 4, 'Weight': 57.5, 'Reps': 5, 'Total': 287.5},
+            {'Set': 5, 'Weight': 62.5, 'Reps': 5, 'Total': 312.5}
+        ]
+        result = tools.generate_set_list(62.5)
+
+        self.assertEqual(result, expected)
+
     def test_calculate_lift_to_bodyweight_ratio(self):
         test_lift_weight = 80
         test_bodyweight = 100
