@@ -6,7 +6,9 @@ import json
 
 class Exercise:
     """A container for exercises."""
-    pass
+    def __init__(self, name, description=None):
+        self.name = name
+        self.description = description
 
 
 class Workout:

@@ -1,6 +1,6 @@
 import json
 from unittest import TestCase
-from unittest.mock import patch, mock_open, MagicMock
+from unittest.mock import patch, mock_open
 from training_tracker.workouts import Exercise, Workout
 
 
@@ -75,7 +75,15 @@ class TestWorkouts(TestCase):
     def test_can_log_a_workout(self):
         test_workout = Workout()
         test_date = '28-01-2018'
-        test_exercise_list = [Exercise(), Exercise()]
+        test_exercise_list = [Exercise("Test exercise 1"), Exercise("Test exercise 2")]
         test_notes = "some random note"
 
         test_workout.log_workout(test_date, test_exercise_list, test_notes)
+
+
+class TestExercises(TestCase):
+    def test_exercise_can_have_a_name(self):
+        exercise_name = "Squat"
+        test_exercise = Exercise(exercise_name)
+
+        self.assertEqual(exercise_name, test_exercise.name)
