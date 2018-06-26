@@ -30,18 +30,20 @@ def generate_set_list(target_max, sets=5, reps=5, orm=100):
     return result
 
 
-def calculate_set_weight(orm, target_max, workout_sets, plate_size):
+def calculate_set_weight(orm, target_max, sets, plate_size):
     """Return weight for one specific set, normalized to plate size.
 
     :param orm: One repetition maximum
     :param target_max:
-    :param workout_sets:
+    :param sets:
     :param plate_size: The weight of a plate in kilo.
     :return:
     """
 
-    this_weight = float(target_max * (next(workout_sets) / orm))
-    if (this_weight % plate_size) > 0:
+    this_weight = float(target_max * (next(sets) / orm))
+
+    pair_of_plates = plate_size * 2
+    if (this_weight % pair_of_plates) > 0:
         this_weight = match_weight_to_plate_size(this_weight, plate_size)
 
     return this_weight
