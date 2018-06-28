@@ -13,7 +13,7 @@ setup(
     author_email='paulwicking@gmail.com',
     description='Py Training Tracker - Track your training progress.',
     long_description=long_description,
-    long_description_content_type="text/rst",
+    long_description_content_type="text/x-rst",
     classifiers=(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
