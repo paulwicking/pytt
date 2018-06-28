@@ -5,7 +5,7 @@ with open("README.rst", "r") as in_file:
 
 setup(
     name='pytt',
-    version='2018.6.1',
+    version='2018.6.1.alpha1',
     packages=find_packages(),
     url='https://www.trainingtracker.io/',
     license='MIT',
@@ -13,7 +13,7 @@ setup(
     author_email='paulwicking@gmail.com',
     description='Py Training Tracker - Track your training progress.',
     long_description=long_description,
-    long_description_content_type="text/rst",
+    long_description_content_type="text/x-rst",
     classifiers=(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
