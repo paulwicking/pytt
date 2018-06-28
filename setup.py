@@ -5,7 +5,7 @@ with open("README.rst", "r") as in_file:
 
 setup(
     name='pytt',
-    version='2018.6.1.alpha1',
+    version='2018.6.1.alpha2',
     packages=find_packages(),
     url='https://www.trainingtracker.io/',
     license='MIT',
