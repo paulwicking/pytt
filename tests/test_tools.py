@@ -1,5 +1,5 @@
 from unittest import TestCase
-from training_tracker import tools
+from pytt import tools
 
 
 class TestWorkoutDiaryTools(TestCase):

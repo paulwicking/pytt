@@ -1,7 +1,7 @@
 import json
 from unittest import TestCase
 from unittest.mock import patch, mock_open
-from training_tracker.workouts import Exercise, Workout
+from pytt.workouts import Exercise, Workout
 
 
 class TestWorkouts(TestCase):
@@ -71,6 +71,10 @@ class TestWorkouts(TestCase):
         result = test_workout.exercise_list()
 
         self.assertEqual(expected, result)
+
+    def test_can_retrieve_a_previously_logged_workout(self):
+        # TODO implement this test then redo the test to log a workout.
+        pass
 
     def test_can_log_a_workout(self):
         test_workout = Workout()

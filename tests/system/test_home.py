@@ -1,5 +1,5 @@
 from unittest import TestCase
-from training_tracker.web_app import app
+from pytt.web_app import app
 import json
 
 

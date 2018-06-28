@@ -1,12 +1,22 @@
 from setuptools import find_packages, setup
 
+with open("README.md", "r") as in_file:
+    long_description = in_file.read()
+
 setup(
-    name='trainingtracker',
+    name='pytt',
     version='2018.6.1',
     packages=find_packages(),
-    url='http://wowsu.ch/training',
+    url='https://www.trainingtracker.io',
     license='MIT',
     author='Paul Wicking',
     author_email='paulwicking@gmail.com',
-    description='Track your power lifting training progress.'
+    description='Py Training Tracker - Track your training progress.',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    classifiers=(
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ),
 )
