@@ -1,10 +1,10 @@
 ******************************
 pytt - Python Training Tracker
 ******************************
-.. image:: https://travis-ci.org/wowsuchnamaste/training-tracker.svg?branch=development
-    :target: https://travis-ci.org/wowsuchnamaste/training-tracker
-.. image:: https://codecov.io/gh/wowsuchnamaste/training-tracker/branch/development/graph/badge.svg
-  :target: https://codecov.io/gh/wowsuchnamaste/training-tracker
+.. image:: https://travis-ci.org/wowsuchnamaste/pytt.svg?branch=development
+    :target: https://travis-ci.org/wowsuchnamaste/pytt
+.. image:: https://codecov.io/gh/wowsuchnamaste/pytt/branch/development/graph/badge.svg
+  :target: https://codecov.io/gh/wowsuchnamaste/pytt
 
 Keep track of your training with this collection of useful tools.
 
