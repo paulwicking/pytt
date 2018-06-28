@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = training-tracker
+source = pytt
 
 [report]
 exclude_lines =
