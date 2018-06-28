@@ -11,4 +11,4 @@ init:
 
 test:
 	@echo 'Running all tests'
-	pipenv run pytest --cov=training_tracker
+	pipenv run pytest --cov=pytt
