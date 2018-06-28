@@ -1,6 +1,10 @@
-os: linux
-sudo: false
+sudo: required
+dist: xenial
 language: python
+cache: pip
+before_install:
+- if [[ $TRAVIS_PYTHON_VERSION == '3.7' ]]; then sudo add-apt-repository ppa:deadsnakes/ppa -y; fi
+- if [[ $TRAVIS_PYTHON_VERSION == '3.7' ]]; then sudo sudo apt-get update; fi
 python:
 - '3.4'
 - '3.5'
