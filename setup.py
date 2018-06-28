@@ -7,7 +7,7 @@ setup(
     name='pytt',
     version='2018.6.1a2',
     packages=find_packages(),
-    url='https://www.trainingtracker.io/',
+    url='https://www.github.com/wowsuchnamaste/pytt/',
     license='MIT',
     author='Paul Wicking',
     author_email='paulwicking@gmail.com',
