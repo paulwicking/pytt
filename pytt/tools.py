@@ -1,5 +1,7 @@
 """Helper functions for a workout diary application."""
 
+CALORIE_TO_JOULE_FACTOR = 4.184
+
 
 def generate_set_list(target_max, sets=5, reps=5, orm=100):
     """Generate workout sets.
@@ -128,7 +130,7 @@ def total_weight_from_sets(set_list):
 
 
 def lift_to_bodyweight_ratio(lift=None, bodyweight=None):
-    """Return the lift weight to body weight ratio.
+    """Returns the lift weight to body weight ratio.
 
     :param lift: ``int`` or ``float``. The lifted weight.
     :param bodyweight: ``int`` or ``float``, body weight.
@@ -141,3 +143,11 @@ def lift_to_bodyweight_ratio(lift=None, bodyweight=None):
         return None
 
     return lift / bodyweight
+
+
+def calorie_to_joule(calories):
+    """Returns the Joule equivalent of calories.
+
+    :param calories: ``int`` or ``float``. Calories as calorie.
+    """
+    return calories * CALORIE_TO_JOULE_FACTOR

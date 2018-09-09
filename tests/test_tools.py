@@ -238,3 +238,16 @@ class TestWorkoutDiaryTools(TestCase):
         actual = tools.lift_to_bodyweight_ratio(test_lift_weight, test_body_weight)
 
         self.assertEqual(expected, actual)
+
+    def test_calorie_to_joule_conversion(self):
+        calories = 1000
+        expected = 4184
+        actual = tools.calorie_to_joule(calories)
+
+        self.assertEqual(expected, actual)
+
+        calories2 = 1750
+        expected2 = 7322
+        actual2 = tools.calorie_to_joule(calories2)
+
+        self.assertEqual(expected2, actual2)
